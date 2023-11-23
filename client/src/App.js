@@ -22,8 +22,6 @@ import Login from "./components/login/Login";
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
 import BookingPage from "./pages/BookingPage";
 import AccountPage from "./pages/AccountPage";
-// import UserForm from './containers/userForm/UserForm';
-// import UserForm from './containers/userForm/UserForm';
 
 function App() {
   return (

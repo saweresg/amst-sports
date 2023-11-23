@@ -1,0 +1,64 @@
+.timeButton {
+  border-radius: 8px;
+  /* background: #FF6D4D; */
+  background: none;
+  outline: none;
+
+  /* color: var(--color-bg); */
+  color: #ff6d4d;
+  border: 2px solid #ff6d4d;
+  /* font-family: sans-serif; */
+  font-family: var(--font-family);
+  font-size: 13.868px;
+  /* font-style: normal; */
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* .free:active   {
+    background: #DF2800;
+}
+
+.selected:active {
+    background: #FF6D4D;
+} */
+
+.free:hover {
+  color: var(--color-bg);
+  background: #ff6d4d;
+  transition: 0.3s;
+}
+
+.selected {
+  color: var(--color-bg);
+  background: #ff6d4d;
+}
+
+.selected:hover {
+  /* background: none;
+    color: #FF6D4D; */
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.selected:active {
+  background: none;
+  color: #ff6d4d;
+}
+
+.blocked {
+  cursor: not-allowed;
+  opacity: 0.4;
+  /* background: #b1b1b1;
+    border: 1px solid #b1b1b1; */
+  /* border-radius: 6px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  /* box-sizing: border-box; */
+  /* color: #858585; */
+  /* cursor: pointer; */
+  /* display: inline-block; */
+}
+
+/* button:se */

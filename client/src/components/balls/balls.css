@@ -1,0 +1,30 @@
+.amst__balls {
+  display: flex;
+  padding: 4rem 6rem;
+  background: var(--color-bg);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.amst__balls div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  min-width: 80px;
+}
+
+.amst__balls div img {
+  width: 50%;
+  height: 50%;
+  opacity: 60%;
+  transition:
+    opacity 0.8s,
+    transform 500000000s;
+}
+
+.amst__balls div img:hover {
+  opacity: 85%;
+  transform: rotate(36000000000deg);
+}

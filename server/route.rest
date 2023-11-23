@@ -1,0 +1,88 @@
+GET http://localhost:5001/bookings
+
+###
+
+GET http://localhost:5001/bookings/2023-11-28
+
+###
+
+POST http://localhost:5001/bookings/
+Content-Type: application/json
+
+{
+    "date": "2023-09-29",
+    "slots": [9, 10]
+}
+
+###
+
+DELETE http://localhost:5001/bookings/undefined
+
+
+###
+
+PATCH http://localhost:5001/bookings/2023-11-28
+Content-Type: application/json
+
+{
+    "slots": [11, 12]
+}
+
+
+###
+
+
+POST http://localhost:5001/checkout
+
+
+###
+
+POST http://localhost:5001/create-checkout-session
+Content-Type: application/json
+
+
+{
+    "date": "2023-11-28",
+    "slots": [9, 10]
+}
+
+
+###
+
+GET http://localhost:5001/users
+
+
+###
+
+
+GET http://localhost:5001/users/VkbXwqYOnOWLF1BmK3FtgxBPQ2i2
+
+
+###
+
+
+POST http://localhost:5001/users/
+Content-Type: application/json
+
+{
+    "firstName": "vic",
+    "lastName": "Saweres",
+    "uid": "123",
+    "email": "abc@abc.com",
+    "password": "^%RFtyfv7"
+}
+
+###
+
+
+PATCH http://localhost:5001/users/gjOOoFgMldQCoWoArYIIezo1lEz2/
+Content-Type: application/json
+
+{
+    "bookings": { "2023-11-22": [ 14, 15 ] }
+}
+
+
+###
+
+DELETE http://localhost:5001/users/abc@abc.com

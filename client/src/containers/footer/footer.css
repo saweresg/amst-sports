@@ -1,0 +1,120 @@
+.footer {
+  background: #ff6d4d;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.footer-container {
+  max-width: 800px;
+  /* background: purple;  */
+  display: flex;
+  min-height: 120px;
+  width: 100%;
+  /* padding: 1rem; */
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  /* flex-direction: column; */
+  /* background: gray; */
+
+  /* margin: 0rem 1rem; */
+
+  width: 100%;
+
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+
+  /* max-width: 1400px; */
+  /* flex-grow: 1;
+    flex-shrink: 1; */
+  /* width: 500px; */
+  /* display: flex; */
+  /* justify-content: space-between;
+    align-items: center; */
+  /* background: darkblue; */
+  /* flex-grow: 1; */
+}
+
+.footer .nav {
+  /* max-width: 1400px; */
+  width: 100%;
+
+  display: flex;
+  /* flex-direction: column; */
+  /* background: blue; */
+  justify-content: space-between;
+  align-self: center;
+  margin: 0rem 0.5rem;
+}
+
+.footer .navbar-link {
+  /* padding: 2.5rem; */
+  font-family: var(--font-family);
+  color: rgba(0, 0, 0, 0.65);
+  color: var(--color-bg);
+  transition: 300ms ease-in;
+  font-weight: 600;
+  /* background-color: aquamarine; */
+}
+
+.footer .nav .active {
+  color: rgba(0, 0, 0, 0.65);
+  text-decoration: none;
+}
+
+.footer .nav .navbar-link:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.footer-bottom {
+  padding-top: 4rem;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 0.25rem;
+}
+
+.footer-logo {
+  /* background: blue; */
+  /* padding: 1rem; */
+  opacity: 0.65;
+  /* display: none; */
+}
+
+.footer-logo img {
+  width: 65px;
+}
+
+@media screen and (max-width: 550px) {
+  .footer-bottom {
+    padding-top: 2rem;
+  }
+  .footer-logo img {
+    width: 55px;
+  }
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}

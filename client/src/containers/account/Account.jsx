@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./account.css";
-import axios from "axios";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-// function
+//takes string input in the form 'YYYY-MM-DD'
+//returns string in the form "September 26 2023"
 function formatDate(yearMonthDay) {
   const monthNames = [
     "January",
@@ -25,35 +25,14 @@ function formatDate(yearMonthDay) {
   return monthNames[parseInt(arr[1] - 1)] + " " + arr[2] + " " + arr[0];
 }
 
-// async function getUserBookings(user){
-//     try {
-//         await axios.get(`http://localhost:5001/users/${user.uid}`)
-//         .then(res => {return console.log(res.data)})
-//         .catch(err => console.log(err.message))
-
-//         // return response.res
-//     } catch (err) {
-//         console.log(err.message)
-//     }
-// }
-
 export default function Account() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [userBookings, setUserBookings] = useState({});
 
-  // useEffect(() => {
-  //     fetch("http://localhost:5001/users/" + currentUser.uid)
-  //     // .then(status)
-  //     .then(res => res.json())
-  //     .then(dayBookings => setDayBookings(dayBookings.slots ? dayBookings.slots : []))
-  //     .catch(function(error) {console.log('error is', error)})
-
-  //   }, []);
-  // let userBookings = getUserBookings(currentUser);
-
-  // console.log(currentUser.uid)
-
+  //Retrieve the Bookings of the user who is currently signed in,
+  //User cannot access this page without being signed in,
+  //So this call only happens when user is signed in
   useEffect(() => {
     fetch("http://localhost:5001/users/" + currentUser.uid)
       .then((response) => response.json())
@@ -71,7 +50,6 @@ export default function Account() {
           <h2>You do not have any bookings</h2>
         </>
       ) : (
-        // <h1>HELLO</h1>
         <div className="times">
           <ul>
             {Object.keys(userBookings)
@@ -80,13 +58,17 @@ export default function Account() {
                 <li>
                   <h2>{formatDate(key)}</h2>
                   <ul>
-                    {userBookings[key].map((time) => (
-                      <li>
-                        <p>
-                          {time}:00-{parseInt(time) + 1}:00
-                        </p>
-                      </li>
-                    ))}
+                    {userBookings[key]
+                      .sort(function (a, b) {
+                        return a - b;
+                      })
+                      .map((time) => (
+                        <li>
+                          <p>
+                            {time}:00-{parseInt(time) + 1}:00
+                          </p>
+                        </li>
+                      ))}
                   </ul>
                 </li>
               ))}

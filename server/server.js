@@ -1,11 +1,17 @@
 const { MongoClient } = require("mongodb");
 const stripe = require("stripe")(
-  "sk_test_51OAKXCEAPdD1ekGcyvsex0Y1afIFbHTdgO1p48UYVwpnF3LWfTgWytzOfzv8HTvG6ADKGLd0YESfi7dwkA4pBUwK00ZlAz7Uyi",
+  "sk_test_51OAKXCEAPdD1ekGcyvsex0Y1afIFbHTdgO1p48UYVwpnF3LWfTgWytzOfzv8HTvG6ADKGLd0YESfi7dwkA4pBUwK00ZlAz7Uyi"
 );
 var cors = require("cors");
 const express = require("express");
 const app = express();
 const axios = require("axios");
+require("dotenv").config();
+
+const databaseUrl = process.env.DATABASE_URL;
+const YOUR_DOMAIN = "http://localhost:3000";
+
+console.log(process.env.DATABASE_URL);
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -42,7 +48,7 @@ app.post(
         event.data.object.id,
         {
           expand: ["line_items"],
-        },
+        }
       );
       const lineItems = sessionWithLineItems.metadata;
       console.log(lineItems);
@@ -52,7 +58,7 @@ app.post(
     }
 
     response.status(200).end();
-  },
+  }
 );
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -62,8 +68,6 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(cors(corsOptions));
 
-const YOUR_DOMAIN = "http://localhost:3000";
-
 async function updateInventory(productId, quantity) {
   try {
     const response = await axios.patch("/api/products/updateQuantity", {
@@ -72,12 +76,12 @@ async function updateInventory(productId, quantity) {
     });
 
     console.log(
-      `Inventory updated for product ID ${productId}. New quantity: ${response.data.quantity}`,
+      `Inventory updated for product ID ${productId}. New quantity: ${response.data.quantity}`
     );
   } catch (error) {
     console.error(
       `Error updating inventory for product ID ${productId}:`,
-      error.response.data,
+      error.response.data
     );
     // Handle the error appropriately
   }
@@ -94,7 +98,8 @@ async function fulfillOrder(lineItems) {
   var dates = Object.keys(dateTimes).sort();
 
   try {
-    await axios.patch(`http://localhost:5001/users/${uid}`, {
+    console.log(`${databaseUrl}/users/${uid}`);
+    await axios.patch(`${databaseUrl}/users/${uid}`, {
       bookings: dateTimes,
     });
   } catch (err) {
@@ -107,7 +112,7 @@ async function fulfillOrder(lineItems) {
     console.log(times);
 
     try {
-      await axios.patch(`http://localhost:5001/bookings/${day}`, {
+      await axios.patch(`${databaseUrl}/bookings/${day}`, {
         slots: times,
       });
     } catch (err) {

@@ -46,11 +46,12 @@
   align-self: auto;
   cursor: pointer;
   padding: 0.5rem 0;
+  transition: 0.5s;
 }
 
 .amst__feature p:hover {
   color: #15539a;
-  transition: 0.5s;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 750px) {

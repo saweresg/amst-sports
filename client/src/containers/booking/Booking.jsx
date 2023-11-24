@@ -316,7 +316,8 @@ const Booking = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5001/bookings/" + date)
+    // console.log(process.env.REACT_APP_DATABASE_URL);
+    fetch(`${process.env.REACT_APP_DATABASE_URL}/bookings/${date}`)
       .then(status)
       .then((res) => res.json())
       .then((dayBookings) =>
@@ -414,7 +415,7 @@ const Booking = () => {
     var temp = {};
     console.log(selected);
     if (currentUser) {
-      fetch("http://localhost:5001/create-checkout-session", {
+      fetch(`${process.env.REACT_APP_DATABASE_URL}/create-checkout-session`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -34,7 +34,7 @@ export default function Account() {
   //User cannot access this page without being signed in,
   //So this call only happens when user is signed in
   useEffect(() => {
-    fetch("http://localhost:5001/users/" + currentUser.uid)
+    fetch(process.env.REACT_APP_DATABASE_URL + "/users/" + currentUser.uid)
       .then((response) => response.json())
       .then((booking) => setUserBookings(booking))
       .catch((err) => console.log(err.message));
@@ -43,7 +43,7 @@ export default function Account() {
   console.log(userBookings);
 
   return (
-    <div className="account">
+    <div className="account" style={{ minHeight: "55vh" }}>
       <h1>My Bookings</h1>
       {Object.keys(userBookings).length === 0 ? (
         <>

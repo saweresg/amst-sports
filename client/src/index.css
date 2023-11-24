@@ -22,6 +22,11 @@ body {
   /* background-color: #031B34; */
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
 /* #root {
   height: 100%;
   width: 100%;

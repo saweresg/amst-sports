@@ -1,4 +1,6 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://test:BIQN9wnySF4Nlpcl@cluster0.rc3cmmf.mongodb.net/?retryWrites=true&w=majority";
 const stripe = require("stripe")(
   "sk_test_51OAKXCEAPdD1ekGcyvsex0Y1afIFbHTdgO1p48UYVwpnF3LWfTgWytzOfzv8HTvG6ADKGLd0YESfi7dwkA4pBUwK00ZlAz7Uyi"
 );
@@ -10,8 +12,6 @@ require("dotenv").config();
 
 const databaseUrl = process.env.DATABASE_URL;
 const YOUR_DOMAIN = "http://localhost:3000";
-
-console.log(process.env.DATABASE_URL);
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -92,8 +92,6 @@ async function fulfillOrder(lineItems) {
   var uid = lineItems.userId;
   console.log(uid);
   console.log(dateTimes);
-  // var parsed = JSON.parse(dateTimes);
-  // console.log(parsed);
 
   var dates = Object.keys(dateTimes).sort();
 
@@ -181,13 +179,62 @@ app.post("/create-checkout-session", async (req, res) => {
   res.json({ url: session.url });
 });
 
-const Booking = require("./models/booking");
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+async function run() {
+  const database = client.db("amstsports");
+  const bookings = database.collection("bookings");
+  const query = { date: "2023-11-28" };
+  const movie = await bookings.findOne(query);
+  console.log(movie);
+}
+
+// run();
+
+// console.log(bookings);
+
+// async function run() {
+// try {
+//   // Connect the client to the server	(optional starting in v4.7)
+//   await client.connect();
+//   // Send a ping to confirm a successful connection
+//   await client.db("admin").command({ ping: 1 });
+//   console.log("Pinged your deployment. You successfully connected to MongoDB!");
+// } finally {
+//   // Ensures that the client will close when you finish/error
+//   await client.close();
+// }
+// }
+// run().catch(console.dir);
+
+// const Booking = require("./models/booking");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/bookings");
+// mongoose
+//   .connect(uri)
+//   .then(() => {
+//     console.log("Connected to MongoDB Atlas");
+//   })
+//   .catch((error) => {
+//     console.error("Error connecting to MongoDB Atlas:", error);
+//   });
+
+// console.log(db.listCollections());
+
+mongoose.connect(uri);
+// mongoose.connect("mongodb://localhost/bookings");
 const db = mongoose.connection;
+
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
+
+// console.log(db.client);
 
 app.use(express.json());
 

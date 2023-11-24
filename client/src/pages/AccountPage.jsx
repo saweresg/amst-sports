@@ -5,7 +5,7 @@ import { Footer } from "../containers";
 
 function AccountPage() {
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <Navbar />
       <Account />
       <Footer />

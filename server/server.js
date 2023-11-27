@@ -11,10 +11,10 @@ const axios = require("axios");
 require("dotenv").config();
 
 const databaseUrl = process.env.DATABASE_URL;
-const YOUR_DOMAIN = "http://localhost:3000";
+const YOUR_DOMAIN = "https://amst-sports.onrender.com/";
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://amst-sports.onrender.com/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };

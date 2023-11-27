@@ -29,7 +29,7 @@ function SignUp() {
       setLoading(true);
       var newUser = await signup(
         emailRef.current.value,
-        passwordRef.current.value,
+        passwordRef.current.value
       );
       var email = newUser.user.email;
       var uid = newUser.user.uid;
@@ -42,7 +42,7 @@ function SignUp() {
         password: "b",
       };
 
-      axios.post("http://localhost:5001/users/", data);
+      axios.post(process.env.REACT_APP_DATABASE_URL + "/users/", data);
       navigate("/");
     } catch (err) {
       // setError(err.message)

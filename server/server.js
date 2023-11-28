@@ -11,10 +11,10 @@ const axios = require("axios");
 require("dotenv").config();
 
 const databaseUrl = process.env.DATABASE_URL;
-const YOUR_DOMAIN = "https://amst-sports.onrender.com";
+const YOUR_DOMAIN = process.env.DOMAIN_URL;
 
 const corsOptions = {
-  origin: "https://amst-sports.onrender.com",
+  origin: process.env.DOMAIN_URL,
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
@@ -26,7 +26,7 @@ const bodyParser = require("body-parser");
 
 app.post(
   "/webhook",
-  // bodyParser.raw({ type: "application/json" }),
+  express.raw({ type: "application/json" }),
   async (request, response) => {
     const payload = request.body;
     const sig = request.headers["stripe-signature"];

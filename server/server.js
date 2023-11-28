@@ -26,7 +26,7 @@ const bodyParser = require("body-parser");
 
 app.post(
   "/webhook",
-  bodyParser.raw({ type: "application/json" }),
+  // bodyParser.raw({ type: "application/json" }),
   async (request, response) => {
     const payload = request.body;
     const sig = request.headers["stripe-signature"];

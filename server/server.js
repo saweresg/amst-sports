@@ -19,8 +19,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-const endpointSecret =
-  "whsec_85d808219348c5cffde8e65ccea6db9f9f75aa97e0d41b8b83ba19261c7a7987";
+const endpointSecret = "whsec_ktmtWnAEIXoAu8EujluwmUTHJcI0BtNf";
 
 const bodyParser = require("body-parser");
 

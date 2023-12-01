@@ -1,9 +1,6 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://test:BIQN9wnySF4Nlpcl@cluster0.rc3cmmf.mongodb.net/?retryWrites=true&w=majority";
-const stripe = require("stripe")(
-  "sk_test_51OAKXCEAPdD1ekGcyvsex0Y1afIFbHTdgO1p48UYVwpnF3LWfTgWytzOfzv8HTvG6ADKGLd0YESfi7dwkA4pBUwK00ZlAz7Uyi"
-);
+const uri = process.env.DB_URL;
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 var cors = require("cors");
 const express = require("express");
 const app = express();
@@ -194,40 +191,9 @@ async function run() {
   console.log(movie);
 }
 
-// run();
-
-// console.log(bookings);
-
-// async function run() {
-// try {
-//   // Connect the client to the server	(optional starting in v4.7)
-//   await client.connect();
-//   // Send a ping to confirm a successful connection
-//   await client.db("admin").command({ ping: 1 });
-//   console.log("Pinged your deployment. You successfully connected to MongoDB!");
-// } finally {
-//   // Ensures that the client will close when you finish/error
-//   await client.close();
-// }
-// }
-// run().catch(console.dir);
-
-// const Booking = require("./models/booking");
 const mongoose = require("mongoose");
 
-// mongoose
-//   .connect(uri)
-//   .then(() => {
-//     console.log("Connected to MongoDB Atlas");
-//   })
-//   .catch((error) => {
-//     console.error("Error connecting to MongoDB Atlas:", error);
-//   });
-
-// console.log(db.listCollections());
-
 mongoose.connect(uri);
-// mongoose.connect("mongodb://localhost/bookings");
 const db = mongoose.connection;
 
 db.on("error", (error) => console.error(error));

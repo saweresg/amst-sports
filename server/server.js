@@ -1,11 +1,11 @@
+require("dotenv").config();
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri = process.env.DB_URL;
+const uri = process.env.MONGO_URI;
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 var cors = require("cors");
 const express = require("express");
 const app = express();
 const axios = require("axios");
-require("dotenv").config();
 
 const databaseUrl = process.env.DATABASE_URL;
 const YOUR_DOMAIN = process.env.DOMAIN_URL;

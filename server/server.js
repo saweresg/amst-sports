@@ -16,7 +16,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-const endpointSecret = "whsec_ktmtWnAEIXoAu8EujluwmUTHJcI0BtNf";
+const endpointSecret = process.env.ENDPOINT_SECRET;
 
 const bodyParser = require("body-parser");
 

@@ -22,6 +22,8 @@ import Login from "./components/login/Login";
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
 import BookingPage from "./pages/BookingPage";
 import AccountPage from "./pages/AccountPage";
+import About from "./containers/about/About";
+import Programs from "./containers/programs/Programs";
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
                 </PrivateRoute>
               }
             ></Route>
+            <Route path="/about" Component={About} />
+            <Route path="/programs" Component={Programs} />
 
             {/* <Route exact path='/checkout' element={<PrivateRoute><Dashboard/></PrivateRoute>}></Route> */}
           </Routes>

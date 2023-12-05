@@ -15,18 +15,21 @@ const WhatIs = () => {
             text={
               "our indoor gym can be rented for soccer, basketball, volleyball, handball. Whether its a group of friends or a team training, everyone is welcome. "
             }
+            link={"/booking"}
           />
           <Feature
             title={"Leagues"}
             text={
               "we have a competitive mens futsal league as well as a coed volleyball league. Team Register as a team or an individual"
             }
+            link={"/programs"}
           />
           <Feature
             title={"Kids Programs"}
             text={
               "we offer soccer and basketball training programs for kids from age 6 to age 13 where they develop their skills while having fun and learning discipline "
             }
+            link={"/programs"}
           />
         </div>
       </div>
@@ -39,6 +42,7 @@ const WhatIs = () => {
             text={
               "AMST for short! We are a Coptic Orthodox Church located in Brampton, Ontario. Along with being a church we also have a gymnasium for our congregation and for the surrounding community"
             }
+            link={"/about"}
           />
           <div className="amst__www-who__features-image">
             <img src={church} alt="church" />
@@ -53,8 +57,9 @@ const WhatIs = () => {
             <Feature
               title={"12091 Hurontario St, Brampton, ON L6Z 4P8"}
               text={
-                "AMST for short! We are a Coptic Orthodox Church located in Brampton, Ontario. Along with being a church we also have a gymnasium for our congregation and for the surrounding community"
+                "At the intersection of Mayfield Rd. and Hurrontario St. in Brampton"
               }
+              link={"/about"}
             />
           </div>
           <div className="amst__www-where__features-image">

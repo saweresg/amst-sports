@@ -40,8 +40,6 @@ export default function Account() {
       .catch((err) => console.log(err.message));
   }, [currentUser]);
 
-  console.log(userBookings);
-
   return (
     <div className="account" style={{ minHeight: "55vh" }}>
       <h1>My Bookings</h1>

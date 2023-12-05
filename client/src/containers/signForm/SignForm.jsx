@@ -108,7 +108,6 @@ const SignForm = () => {
     setIsSignUp(!isSignUp);
   }
 
-  console.log(values);
   return (
     <div className="signForm">
       <form onSubmit={handleSubmit}>

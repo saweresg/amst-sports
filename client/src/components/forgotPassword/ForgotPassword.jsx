@@ -18,8 +18,6 @@ function ForgotPassword() {
     e.preventDefault();
 
     try {
-      console.log("HELLOWORLD");
-
       setMessage("");
       setError("");
       setLoading(true);

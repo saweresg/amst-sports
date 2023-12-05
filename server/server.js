@@ -60,28 +60,8 @@ app.post(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(express.static("public"));
 app.use(cors(corsOptions));
-
-async function updateInventory(productId, quantity) {
-  try {
-    const response = await axios.patch("/api/products/updateQuantity", {
-      productId,
-      quantity,
-    });
-
-    console.log(
-      `Inventory updated for product ID ${productId}. New quantity: ${response.data.quantity}`
-    );
-  } catch (error) {
-    console.error(
-      `Error updating inventory for product ID ${productId}:`,
-      error.response.data
-    );
-    // Handle the error appropriately
-  }
-}
 
 async function fulfillOrder(lineItems) {
   var dateTimes = JSON.parse(lineItems.dateAndTimes);
@@ -183,14 +163,6 @@ const client = new MongoClient(uri, {
   },
 });
 
-async function run() {
-  const database = client.db("amstsports");
-  const bookings = database.collection("bookings");
-  const query = { date: "2023-11-28" };
-  const movie = await bookings.findOne(query);
-  console.log(movie);
-}
-
 const mongoose = require("mongoose");
 
 mongoose.connect(uri);
@@ -198,8 +170,6 @@ const db = mongoose.connection;
 
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
-
-// console.log(db.client);
 
 app.use(express.json());
 

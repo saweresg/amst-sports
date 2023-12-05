@@ -11,6 +11,8 @@ function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
+  const firstRef = useRef();
+  const lastRef = useRef();
   const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,11 +37,10 @@ function SignUp() {
       var uid = newUser.user.uid;
 
       const data = {
-        firstName: "Fredy",
-        lastName: "Flinny",
+        firstName: firstRef.current.value,
+        lastName: lastRef.current.value,
         uid: uid,
         email: email,
-        password: "b",
       };
 
       axios.post(process.env.REACT_APP_DATABASE_URL + "/users/", data);
@@ -84,6 +85,32 @@ function SignUp() {
                   <Form.Control
                     type="email"
                     ref={emailRef}
+                    required
+                    style={{
+                      background: "#FFF6DD",
+                      border: "1px solid #FFF6DD",
+                      opacity: "0.9",
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group id="first">
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    ref={firstRef}
+                    required
+                    style={{
+                      background: "#FFF6DD",
+                      border: "1px solid #FFF6DD",
+                      opacity: "0.9",
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group id="last">
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    ref={lastRef}
                     required
                     style={{
                       background: "#FFF6DD",

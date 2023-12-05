@@ -11,9 +11,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    password: {
-      type: String,
-      required: true,
+    admin: {
+      type: Boolean,
+      default: false,
     },
     firstName: {
       type: String,
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
       // required: true
     },
   },
-  { minimize: false },
+  { minimize: false }
 );
 
 module.exports = mongoose.model("User", userSchema);

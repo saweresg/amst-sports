@@ -67,8 +67,18 @@
 }
 
 .amst__booking-title {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* justify-content: left; */
+}
+
+.amst__booking-title p {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .amst__booking-title h1 {

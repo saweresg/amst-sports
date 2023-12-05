@@ -444,6 +444,7 @@ const Booking = () => {
       <div className="amst__booking">
         <div className="amst__booking-title">
           <h1>Book Now</h1>
+          <p>$80 per hour</p>
         </div>
         <div className="amst__booking-container">
           <div className="amst__booking-calendar">

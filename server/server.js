@@ -26,7 +26,6 @@ app.post(
   async (request, response) => {
     const payload = request.body;
     const sig = request.headers["stripe-signature"];
-    console.log("ENTERED WEBHOOK");
 
     let event;
 
@@ -47,9 +46,7 @@ app.post(
         }
       );
       const lineItems = sessionWithLineItems.metadata;
-      console.log(lineItems);
 
-      // Fulfill the purchase...
       fulfillOrder(lineItems);
     }
 
@@ -66,8 +63,6 @@ app.use(cors(corsOptions));
 async function fulfillOrder(lineItems) {
   var dateTimes = JSON.parse(lineItems.dateAndTimes);
   var uid = lineItems.userId;
-  console.log(uid);
-  console.log(dateTimes);
 
   var dates = Object.keys(dateTimes).sort();
 
@@ -82,8 +77,6 @@ async function fulfillOrder(lineItems) {
 
   dates.forEach(async function (day) {
     times = dateTimes[day];
-    console.log(day);
-    console.log(times);
 
     try {
       await axios.patch(`${databaseUrl}/bookings/${day}`, {

@@ -316,7 +316,6 @@ const Booking = () => {
   }
 
   useEffect(() => {
-    // console.log(process.env.REACT_APP_DATABASE_URL);
     fetch(`${process.env.REACT_APP_DATABASE_URL}/bookings/${date}`)
       .then(status)
       .then((res) => res.json())
@@ -412,8 +411,6 @@ const Booking = () => {
   }
 
   function handleSubmit() {
-    var temp = {};
-    console.log(selected);
     if (currentUser) {
       fetch(`${process.env.REACT_APP_DATABASE_URL}/create-checkout-session`, {
         method: "POST",

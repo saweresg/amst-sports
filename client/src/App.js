@@ -24,6 +24,7 @@ import BookingPage from "./pages/BookingPage";
 import AccountPage from "./pages/AccountPage";
 import About from "./containers/about/About";
 import Programs from "./containers/programs/Programs";
+import Facilities from "./containers/facilities/Facilities";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             ></Route>
             <Route path="/about" Component={About} />
             <Route path="/programs" Component={Programs} />
+            <Route path="/facilities" Component={Facilities} />
 
             {/* <Route exact path='/checkout' element={<PrivateRoute><Dashboard/></PrivateRoute>}></Route> */}
           </Routes>

@@ -461,13 +461,15 @@ const Booking = () => {
             </CalendarContainer>
           </div>
 
-          <div className="amst__booking-buttons">
-            <Slots
-              times={new Set(dayBookings)}
-              date={date}
-              onButtonClick={handleButtonClick}
-              taken={date in selected ? selected[date] : new Set([])}
-            />
+          <div className="buttons-container">
+            <div className="amst__booking-buttons">
+              <Slots
+                times={new Set(dayBookings)}
+                date={date}
+                onButtonClick={handleButtonClick}
+                taken={date in selected ? selected[date] : new Set([])}
+              />
+            </div>
           </div>
         </div>
 

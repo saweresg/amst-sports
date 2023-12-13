@@ -90,14 +90,19 @@ const Navbar = () => {
       <div className="amst__navbar-sign">
         {currentUser ? (
           <>
-            <p onClick={() => navigate("/account")}>My Bookings</p>{" "}
+            {/* <p onClick={() => navigate("/account")}>My Bookings</p> */}
+            <NavLink to="/account" className={"navbar-link"}>
+              My Bookings
+            </NavLink>
             <button onClick={handleLogout} type="button">
               Sign Out
             </button>
           </>
         ) : (
           <>
-            <p onClick={handleLogin}>Sign In</p>
+            <NavLink to="/user/login" className={"navbar-link"}>
+              Sign In
+            </NavLink>
             <button onClick={handleSignup} type="button">
               Sign Up
             </button>
@@ -126,14 +131,19 @@ const Navbar = () => {
               <div className="amst__navbar-menu_container-links-sign">
                 {currentUser ? (
                   <>
-                    <p onClick={() => navigate("/account")}>My Bookings</p>{" "}
+                    <NavLink to="/account" className={"navbar-link"}>
+                      My Bookings
+                    </NavLink>
                     <button onClick={handleLogout} type="button">
                       Sign Out
                     </button>
                   </>
                 ) : (
                   <>
-                    <p onClick={handleLogin}>Sign in</p>
+                    {/* <p onClick={handleLogin}>Sign in</p> */}
+                    <NavLink to="/user/login" className={"navbar-link"}>
+                      Sign In
+                    </NavLink>
                     <button onClick={handleSignup} type="button">
                       Sign Up
                     </button>

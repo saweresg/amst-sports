@@ -46,15 +46,17 @@
   color: var(--color-bg);
   transition: 300ms ease-in;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .footer .nav .active {
   color: rgba(0, 0, 0, 0.65);
-  text-decoration: none;
+  text-decoration: none !important;
+  /* color: red; */
 }
 
 .footer .nav .navbar-link:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   color: rgba(0, 0, 0, 0.65);
 }
 

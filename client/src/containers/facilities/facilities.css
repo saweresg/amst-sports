@@ -1,0 +1,23 @@
+.facilities h1 {
+  color: rgba(0, 0, 0, 0.65);
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  /* justify-content: center; */
+  /* background-color: var(--color-bg); */
+}
+
+.facility-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  /* background-color: aquamarine; */
+}
+
+/* .facilities {
+  padding: 6rem 0;
+} */

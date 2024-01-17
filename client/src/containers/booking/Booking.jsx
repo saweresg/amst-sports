@@ -453,7 +453,7 @@ const Booking = () => {
                 onChange={onChange}
                 value={value}
                 minDate={new Date()}
-                maxDate={new Date(2023, 11, 31)}
+                maxDate={new Date(2024, 11, 31)}
                 next2Label={null}
                 prev2Label={null}
                 minDetail={"year"}

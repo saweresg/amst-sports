@@ -137,7 +137,7 @@ app.post("/create-checkout-session", async (req, res) => {
       }),
     mode: "payment",
     success_url: `${YOUR_DOMAIN}/account`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    cancel_url: `${YOUR_DOMAIN}/booking`,
     metadata: {
       userId: req.body.customer.uid,
       dateAndTimes: JSON.stringify(req.body.selected),

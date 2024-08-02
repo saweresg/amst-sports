@@ -384,19 +384,9 @@ const Booking = () => {
     // let start = parseInt(arr[3]);
     // let end = start+1;
 
-    return monthNames[parseInt(arr[1] - 1)] + " " + arr[2] + " " + arr[0];
-  }
-
-  function compareInt(a, b) {
-    return b - a;
-  }
-
-  function getDayBookings(day) {
-    //use date to return array of bookings on that day
-    //[] if no bookings
-    //['8', '9', 15', '16']
-
-    return [];
+    return (
+      monthNames[parseInt(arr[1] - 1)] + " " + parseInt(arr[2]) + " " + arr[0]
+    );
   }
 
   function helper(dict) {

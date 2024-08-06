@@ -17,7 +17,6 @@ function SignUp() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // const axios = require('axios');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -46,8 +45,15 @@ function SignUp() {
       axios.post(process.env.REACT_APP_DATABASE_URL + "/users/", data);
       navigate("/");
     } catch (err) {
-      // setError(err.message)
-      setError("Failed to create an account");
+      if (err.code == "auth/email-already-in-use") {
+        setError("The email address is already in use");
+      } else if (err.code == "auth/invalid-email") {
+        setError("The email address is not valid.");
+      } else if (err.code == "auth/operation-not-allowed") {
+        setError("Operation not allowed.");
+      } else if (err.code == "auth/weak-password") {
+        setError("The password is too short (minimum 8 characters)");
+      }
     }
 
     setLoading(false);

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Navbar from "../navbar/Navbar";
 
@@ -12,7 +12,6 @@ function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,12 +21,8 @@ function Login() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/");
-
-      //   const { redirectTo } = queryString.parse(location.search);
-      //   history.push(redirectTo == null ? "/apps" : redirectTo);
     } catch (err) {
-      // setError(err.message)
-      setError("Failed to sign in");
+      setError("Wrong email and/or password");
     }
 
     setLoading(false);

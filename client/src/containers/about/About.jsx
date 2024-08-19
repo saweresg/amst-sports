@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../../components";
 import "./about.css";
-import church from "../../assets/churchOutside.svg";
+import church from "../../assets/church-bg.png";
 import Footer from "../footer/Footer";
 
 export default function About() {

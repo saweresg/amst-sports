@@ -6,7 +6,6 @@
   font-weight: 600;
   line-height: normal;
   text-align: center;
-  /* background-color: var(--color-bg); */
 }
 
 h2 {
@@ -17,7 +16,6 @@ h2 {
   font-weight: 700;
   letter-spacing: -1.503px;
   padding: 2rem 0;
-  /* text-align: center; */
 }
 
 .about-church p {
@@ -34,7 +32,10 @@ h2 {
 }
 
 .about-church img {
-  padding: 2rem 0;
+  margin: 2rem 0;
+  width: 711px;
+  /* height: 404px; */
+  border-radius: 35px;
 }
 
 @media screen and (max-width: 950px) {

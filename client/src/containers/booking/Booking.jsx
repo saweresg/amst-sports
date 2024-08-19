@@ -332,6 +332,13 @@ const Booking = () => {
                 next2Label={null}
                 prev2Label={null}
                 minDetail={"year"}
+                showFixedNumberOfWeeks={true}
+                calendarType={"gregory"}
+                formatShortWeekday={(locale, date) =>
+                  ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"][date.getDay()]
+                }
+                nextLabel={">"}
+                prevLabel={"<"}
               />
             </CalendarContainer>
           </div>

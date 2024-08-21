@@ -35,7 +35,7 @@ h2 {
   margin: 2rem 0;
   width: 711px;
   /* height: 404px; */
-  border-radius: 35px;
+  border-radius: 1rem;
 }
 
 @media screen and (max-width: 950px) {
@@ -50,6 +50,7 @@ h2 {
   }
   .about-church img {
     width: 500px;
-    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
   }
 }

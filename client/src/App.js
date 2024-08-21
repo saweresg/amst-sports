@@ -28,40 +28,43 @@ import Facilities from "./containers/facilities/Facilities";
 
 function App() {
   return (
-    <div className="main">
+    <div class="main">
       <Router>
-        <AuthProvider>
-          {/* <UserForm /> */}
-          <Routes>
-            <Route exact path="/" Component={Home} />
-            <Route path="/booking" Component={BookingPage} />
+        <div class="main-page">
+          <AuthProvider>
+            {/* <UserForm /> */}
+            <Routes>
+              <Route exact path="/" Component={Home} />
+              <Route path="/booking" Component={BookingPage} />
 
-            <Route
-              path="/user"
-              element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              }
-            ></Route>
-            <Route path="/user/signup" Component={SignUp} />
-            <Route path="/user/login" Component={Login} />
-            <Route path="/user/forgot-password" Component={ForgotPassword} />
-            <Route
-              path="/account"
-              element={
-                <PrivateRoute>
-                  <AccountPage />
-                </PrivateRoute>
-              }
-            ></Route>
-            <Route path="/about" Component={About} />
-            <Route path="/programs" Component={Programs} />
-            <Route path="/facilities" Component={Facilities} />
+              <Route
+                path="/user"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route path="/user/signup" Component={SignUp} />
+              <Route path="/user/login" Component={Login} />
+              <Route path="/user/forgot-password" Component={ForgotPassword} />
+              <Route
+                path="/account"
+                element={
+                  <PrivateRoute>
+                    <AccountPage />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route path="/about" Component={About} />
+              <Route path="/programs" Component={Programs} />
+              <Route path="/facilities" Component={Facilities} />
 
-            {/* <Route exact path='/checkout' element={<PrivateRoute><Dashboard/></PrivateRoute>}></Route> */}
-          </Routes>
-        </AuthProvider>
+              {/* <Route exact path='/checkout' element={<PrivateRoute><Dashboard/></PrivateRoute>}></Route> */}
+            </Routes>
+          </AuthProvider>
+        </div>
+        <Footer />
       </Router>
     </div>
   );

@@ -15,7 +15,7 @@ export default function BookingPage() {
     <>
       <Navbar />
       <Booking />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

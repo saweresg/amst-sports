@@ -25,7 +25,6 @@ export default function About() {
           <br /> More information can be found on: https://sttekla.org/
         </p>
       </div>
-      <Footer />
     </div>
   );
 }

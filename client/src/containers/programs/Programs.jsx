@@ -14,7 +14,6 @@ export default function Programs() {
           kids soccer program
         </p>
       </div>
-      <Footer />
     </div>
   );
 }

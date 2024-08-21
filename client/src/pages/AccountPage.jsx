@@ -8,7 +8,6 @@ function AccountPage() {
     <div>
       <Navbar />
       <Account />
-      <Footer />
       {/* <h1>My Bookings</h1> */}
     </div>
   );

@@ -13,18 +13,30 @@
   --color-blog: #042c54;
   /* --color-text: #81AFDD; */
   --color-subtext: #ff8a71;
+  /* max-width: 1600px; */
+  /* justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center; */
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
-  /* background-color: #031B34; */
+  /* max-width: 1640px; */
+  /* align-items: center; */
+
+  /* background-color: #031b34; */
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  /* justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center; */
 }
 
 /* #root {

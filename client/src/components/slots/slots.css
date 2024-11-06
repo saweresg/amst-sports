@@ -1,9 +1,10 @@
 .timeButton {
-  border-radius: 8px;
+  border-radius: 10px;
   background: none;
   outline: none;
   color: #ff6d4d;
-  border: 2px solid #ff6d4d;
+  /* border: 2px solid #ff6d4d; */
+  border: 2.5px solid #ff6d4d;
   font-family: var(--font-family);
   font-size: 13.868px;
   font-weight: 600;

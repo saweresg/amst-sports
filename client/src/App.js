@@ -32,7 +32,6 @@ function App() {
       <Router>
         <div class="main-page">
           <AuthProvider>
-            {/* <UserForm /> */}
             <Routes>
               <Route exact path="/" Component={Home} />
               <Route path="/booking" Component={BookingPage} />

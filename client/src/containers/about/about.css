@@ -35,7 +35,7 @@ h2 {
   margin: 2rem 0;
   width: 711px;
   /* height: 404px; */
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 
 @media screen and (max-width: 950px) {

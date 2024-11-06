@@ -70,6 +70,12 @@
   line-height: normal;
   cursor: pointer;
 
+  text-decoration: underline 0.2em var(--color-bg);
+  /* text-decoration-thickness: 0.1em; */
+  text-decoration-color: var(--color-bg);
+  text-underline-offset: 0.1em;
+  transition: 200ms;
+
   display: inline-block;
 }
 
@@ -93,14 +99,12 @@
 .amst__navbar-sign a.navbar-link:hover,
 .amst__navbar-sign .active,
 .amst__navbar-menu .navbar-link:hover {
-  text-decoration: underline !important;
-  text-decoration-color: #3384e2 !important;
-  /* text-decoration-style: solid !important; */
-  text-decoration-thickness: 4px !important;
-  text-underline-offset: 8px !important;
-  /* transition: 0.3s; */
-  /* transform: scale(1.1) translateZ(1px); */
+  text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+  text-decoration-color: #3384e2;
+  text-underline-offset: 0.6em;
   color: rgba(0, 0, 0, 0.85);
+  transition: 200ms;
 }
 
 /* .amst__navbar-links_logo img{ */

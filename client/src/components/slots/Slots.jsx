@@ -37,11 +37,11 @@ const Slots = ({ times, onButtonClick, date, taken }) => {
     <>
       {slots.map((slot) => (
         <SlotButton
-          uid={slot} // < 10 ? '0'+slot : slot}
+          uid={slot}
           key={date + "-" + slot}
           time={slot}
           isDisabled={times.has(slot)}
-          buttonClick={() => onButtonClick(date, slot)} // < 10 ? '0'+slot : slot)}
+          buttonClick={() => onButtonClick(date, slot)}
           taken={taken}
         />
       ))}

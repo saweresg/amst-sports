@@ -21,6 +21,11 @@ const CalendarContainer = styled.div`
   border-radius: 15px;
 
   /* ~~~ navigation styles ~~~ */
+  .react-calendar {
+    width: 100%;
+    height: 100%;
+  }
+
   .react-calendar__navigation {
     display: flex;
 
@@ -130,22 +135,36 @@ const CalendarContainer = styled.div`
     color: #fff6dd !important;
   }
 
+  .react-calendar__year-view {
+    display: flex;
+    // background-color: red;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+    width: 100%;
+  }
+
   /* ~~~ other view styles ~~~ */
   .react-calendar__year-view__months,
   .react-calendar__decade-view__years,
   .react-calendar__century-view__decades {
     display: grid !important;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    // background-color: blue;
+    width: 100%;
+    height: 100%;
 
     &.react-calendar__year-view__months button {
-      width: 70px;
-      height: 70px;
+      width: 100%;
+      height: 100%;
       font-size: 12px;
       text-align: center;
+      margin: 0 !important;
     }
 
     &.react-calendar__year-view__months {
-      grid-template-columns: 33.3% 33.3% 33.3%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-gap: 0.5rem;
     }
 
     .react-calendar__tile {

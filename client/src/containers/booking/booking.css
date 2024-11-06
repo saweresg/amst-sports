@@ -6,27 +6,14 @@
 }
 
 .amst__booking-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 350px 350px;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-.amst__booking .amst__booking-calendar,
-.amst__booking .buttons-container {
-  margin: 1rem;
-}
-
-.amst__booking-calendar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 400px;
+  padding: 2rem 0;
 }
 
 .buttons-container {
-  width: 350px;
-  height: 370px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,17 +21,11 @@
 
 .amst__booking-buttons {
   display: grid;
-  grid-template-areas:
-    "button1 button2 button3"
-    "button4 button5 button6"
-    "button7 button8 button9"
-    "button10 button11 button12"
-    "button13 button14 button15";
-
-  min-height: 300px;
-  max-height: 300px;
-  max-width: 300px;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
 }
 
 .amst__booking-title {
@@ -83,17 +64,17 @@
 .amst__booking .checkout {
   display: flex;
   width: 350px;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 1rem;
 }
 
 .amst__booking-bottom-info {
   display: flex;
+  margin-top: 1rem;
   justify-content: center;
 }
 
 .amst__booking .checkout button {
-  margin: 0rem 0.5rem;
   background: #3384e2;
   border: none;
   color: var(--color-bg);
@@ -104,8 +85,8 @@
   font-weight: 500;
   border-radius: 8px;
 
-  width: 121.75px;
-  height: 50.745px;
+  width: 106px;
+  height: 55.19px;
   transition: 0.5s;
 
   line-height: 18px;
@@ -155,14 +136,13 @@
 
 @media screen and (max-width: 750px) {
   .amst__booking-container {
-    flex-direction: column;
+    grid-template-columns: 350px;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem;
   }
 
   .amst__booking {
     padding: 2rem 2rem;
-  }
-
-  .amst__booking-calendar {
   }
 
   .amst__booking-bottom-info {

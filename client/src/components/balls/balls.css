@@ -2,7 +2,8 @@
   display: flex;
   padding: 4rem 6rem;
   background: var(--color-bg);
-  justify-content: space-around;
+  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -19,9 +20,7 @@
   width: 50%;
   height: 50%;
   opacity: 60%;
-  transition:
-    opacity 0.8s,
-    transform 500000000s;
+  transition: opacity 0.8s, transform 500000000s;
 }
 
 .amst__balls div img:hover {

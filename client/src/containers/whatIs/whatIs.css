@@ -102,3 +102,12 @@
     flex: 5;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .amst__www {
+    display: flex;
+    flex-direction: column;
+    /* background: brown; */
+    padding: 0rem 1rem;
+  }
+}

@@ -2,8 +2,9 @@
   display: flex;
   padding: 4rem 6rem;
   background: var(--color-bg);
-  justify-content: space-evenly;
-  justify-content: center;
+
+  justify-content: space-around;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -26,4 +27,10 @@
 .amst__balls div img:hover {
   opacity: 85%;
   transform: rotate(36000000000deg);
+}
+
+@media screen and (max-width: 1050px) {
+  .amst__balls {
+    justify-content: center;
+  }
 }

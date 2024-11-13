@@ -14,11 +14,8 @@ const Header = () => {
   return (
     <div className="amst__header">
       <div className="amst__header-text">
-        <div>
-          <h1>AMST SPORTS</h1>
-          <h2>Rentals-Leagues-Programs</h2>
-        </div>
-
+        <h1>AMST SPORTS</h1>
+        <h2>Rentals-Leagues-Programs</h2>
         <button onClick={handleClick} type="button">
           Book Now
         </button>

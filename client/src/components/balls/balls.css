@@ -29,7 +29,7 @@
   transform: rotate(36000000000deg);
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 850px) {
   .amst__balls {
     justify-content: center;
   }
